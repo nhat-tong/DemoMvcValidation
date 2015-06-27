@@ -27,7 +27,7 @@ namespace NewValidationMvc
             bundles.Add(new ScriptBundle("~/bundles/datepicker").Include(
                       "~/Scripts/moment.js",
                       "~/Scripts/bootstrap-datetimepicker.js",
-                      "~/Scripts/datepicker.js"
+                      "~/Scripts/datetimepicker.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

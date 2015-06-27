@@ -2,7 +2,7 @@
 // which are datepicker controls
 
 $(function () {
-    $('.datepicker').each(function (index) {
+    $('.datetimepicker').each(function (index) {
         var $this = $(this);
 
         // init datepicker with format FR

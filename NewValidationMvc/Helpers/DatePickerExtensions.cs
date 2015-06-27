@@ -13,18 +13,18 @@ namespace NewValidationMvc.Helpers
     /// HtmlHelper extension for Boostrap DatePicker v3
     /// see ref: https://eonasdan.github.io/bootstrap-datetimepicker/
     /// </summary>
-    public static class DatePickerExtensions
+    public static class DateTimePickerExtensions
     {
         private const int DefaultWidth = 3;
 
-        #region CustomDatePickerFor
+        #region DateTimePickerFor
 
-        public static MvcHtmlString CustomDatePickerFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, IDictionary<string, object> htmlAttributes)
+        public static MvcHtmlString DateTimePickerFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, IDictionary<string, object> htmlAttributes)
         {
-            return CustomDatePickerFor(html, expression, htmlAttributes, DefaultWidth);
+            return DateTimePickerFor(html, expression, htmlAttributes, DefaultWidth);
         }
 
-        public static MvcHtmlString CustomDatePickerFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, IDictionary<string, object> htmlAttributes, int width)
+        public static MvcHtmlString DateTimePickerFor<TModel, TProperty>(this HtmlHelper<TModel> html, Expression<Func<TModel, TProperty>> expression, IDictionary<string, object> htmlAttributes, int width)
         {
             if (htmlAttributes == null)
             {
@@ -40,7 +40,7 @@ namespace NewValidationMvc.Helpers
             span.InnerHtml = s.ToString(TagRenderMode.Normal);
 
             TagBuilder div = new TagBuilder("div");
-            div.AddCssClass(string.Format("input-group col-sm-{0} date datepicker", width));
+            div.AddCssClass(string.Format("input-group col-sm-{0} date datetimepicker", width));
             div.InnerHtml = html.TextBoxFor(expression, htmlAttributes) + span.ToString(TagRenderMode.Normal);
 
             return MvcHtmlString.Create(div.ToString(TagRenderMode.Normal));
